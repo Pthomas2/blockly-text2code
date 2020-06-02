@@ -34,7 +34,6 @@ Blockly.Blocks['function'] = {
     this.appendValueInput("func")
         .setCheck(null)
         .appendField("=>", "statement")
-    this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(230);
  this.setTooltip("");
