@@ -26,7 +26,6 @@
 Blockly.JavaScript['functionCode'] = function(block) {
   var value_funcname = Blockly.JavaScript.valueToCode(block, 'funcName', Blockly.JavaScript.ORDER_ATOMIC);
   var value_input = Blockly.JavaScript.valueToCode(block, 'input', Blockly.JavaScript.ORDER_ATOMIC);
-  var variable_vari = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('vari'), Blockly.Variables.NAME_TYPE);
   var value_func = Blockly.JavaScript.valueToCode(block, 'func', Blockly.JavaScript.ORDER_ATOMIC);
 	function getFunc(func) {
 	  var funct = func.replace(/[^\w\$ऀ-ॣ०-९ॱ-ॿ]/g, "_");
