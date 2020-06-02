@@ -30,7 +30,7 @@ Blockly.Blocks['function'] = {
         .appendField("const", "functionName");
     this.appendValueInput("input")
         .setCheck(null)
-        .appendField("=", "(input)");
+        .appendField("= (x)", "(input)");
     this.appendValueInput("func")
         .setCheck(null)
         .appendField("=>", "statement")
