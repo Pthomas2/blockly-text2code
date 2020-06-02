@@ -28,10 +28,19 @@ Blockly.JavaScript['functionCode'] = function(block) {
   var value_input = Blockly.JavaScript.valueToCode(block, 'input', Blockly.JavaScript.ORDER_ATOMIC);
   var variable_vari = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('vari'), Blockly.Variables.NAME_TYPE);
   var value_func = Blockly.JavaScript.valueToCode(block, 'func', Blockly.JavaScript.ORDER_ATOMIC);
+	function getFunc(func) {
+	  var funct = func.replace(/[^\w\$ऀ-ॣ०-९ॱ-ॿ]/g, "_");
+	  return funct[0].replace(/[^_\\$|A-Z|a-z|ऄ-ह|ऽ|ॐ|क़-ॡ|ॱ-ॿ]/, "_") + funct.substring(1);	
+	};
+	function replaceInput(func) {
+	  var input = getFunc(func).replace(/"x"/g, value_input);
+	  return input;	
+	};
   // TODO: Assemble JavaScript into code variable.
-  var code = ;
-  // TODO: Change ORDER_NONE to the correct strength.
+  var code = replaceInput(value_func);
   return [code, Blockly.JavaScript.ORDER_NONE];
+  
 };
 
 Blockly.JavaScript['function'] = functionCode.bind(null, 'function');
+
