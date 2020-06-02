@@ -27,17 +27,16 @@ Blockly.Blocks['function'] = {
     this.appendValueInput("funcName")
         .setCheck(null)
         .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField(new Blockly.FieldLabelSerializable("const = "), "functionName");
-    this.appendStatementInput("input")
+        .appendField("const", "functionName");
+    this.appendValueInput("input")
         .setCheck(null)
-        .appendField("=")
-        .appendField(new Blockly.FieldVariable("input(s)"), "inputs");
-    this.appendStatementInput("function")
+        .appendField("=", "(input)");
+    this.appendValueInput("func")
         .setCheck(null)
-        .appendField("=>");
+        .appendField("=>", "statement")
+        .appendField(new Blockly.FieldVariable("item"), "vari");
     this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
+    this.setOutput(true, null);
     this.setColour(230);
  this.setTooltip("");
  this.setHelpUrl("");

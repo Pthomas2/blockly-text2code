@@ -23,13 +23,15 @@
  *         (All Other Code/Modifications to Block Definitions) Jason Schanker
  */
 
-Blockly.JavaScript['function'] = function(block) {
+Blockly.JavaScript['functionCode'] = function(block) {
   var value_funcname = Blockly.JavaScript.valueToCode(block, 'funcName', Blockly.JavaScript.ORDER_ATOMIC);
-  var variable_inputs = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('inputs'), Blockly.Variables.NAME_TYPE);
-  var statements_input = Blockly.JavaScript.statementToCode(block, 'input');
-  var statements_function = Blockly.JavaScript.statementToCode(block, 'function');
+  var value_input = Blockly.JavaScript.valueToCode(block, 'input', Blockly.JavaScript.ORDER_ATOMIC);
+  var variable_vari = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('vari'), Blockly.Variables.NAME_TYPE);
+  var value_func = Blockly.JavaScript.valueToCode(block, 'func', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  return statements_function;
+  var code = ;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
-Blockly.JavaScript['function'] = indexOfCode.bind(null, 'function');
+Blockly.JavaScript['function'] = functionCode.bind(null, 'function');
