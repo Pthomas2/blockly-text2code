@@ -92,15 +92,13 @@
     }
     return code;
   }
-  function updateToolbox(langCode) {
+  function updateToolbox() {
     document.getElementById("toolbox").querySelectorAll("category")
       .forEach(category => {
         category.setAttribute("name", 
-          T2C.MSG[langCode.toUpperCase()][category.dataset.name]);
+          T2C.MSG.currentLanguage[category.dataset.name]);
       });
 
-      workspace.updateToolbox(toolbox);
-       T2C.MSG.currentLanguage = T2C.MSG[langCode.toUpperCase()];
   }
 
   if(window.location && typeof window.location.href === "string") {
@@ -123,12 +121,21 @@ function updateTexts() {
         textarea.placeholder = T2C.MSG.currentLanguage[textarea.name];
       });
   };
-  document.getElementById("language").addEventListener("change", function() {
-    updateToolbox(document.getElementById("language").value);
+
+  function runUpdates(){
+    T2C.MSG.currentLanguage = T2C.MSG[document.getElementById("language").value.toUpperCase()];
+  	updateToolbox();
+    workspace.updateToolbox(toolbox);
     updateWords()
     updateTexts()
     document.getElementById("outputAppearsBelow").innerText = T2C.MSG.currentLanguage.HEADING_OUTPUT_APPEARS_BELOW;
     document.getElementById("bottomText").innerText = T2C.MSG.currentLanguage.HEADING_BOTTOM_TEXT;
+  };
+  document.getElementById("language").addEventListener("change", function() {
+ 	runUpdates();
+  });
+  window.addEventListener('load', (event) => {
+  	runUpdates()
   });
   document.getElementById("convertToJSText2CodeButton").addEventListener("click", function() {
     if(document.getElementById("consoleDisplay")) document.getElementById("consoleDisplay").textContent = "";
