@@ -353,7 +353,7 @@ Blockly.Blocks['t2c_text_length'] = {
       "output": "Number",
       "colour": Blockly.Blocks.texts.HUE,
       "tooltip": T2C.MSG.currentLanguage.TEXT_T2C_LENGTH_TOOLTIP,
-      "helpUrl": 'https://www.w3schools.com/js/js_string_methods.asp'
+      "helpUrl": Blockly.Msg.TEXT_LENGTH_TOOLTIP
     });
   }
 };

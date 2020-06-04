@@ -122,7 +122,7 @@ function updateTexts() {
       });
   };
 
-  function runUpdates(){
+  function runTextLangUpdates(){
     T2C.MSG.currentLanguage = T2C.MSG[document.getElementById("language").value.toUpperCase()];
     updateToolbox();
     workspace.updateToolbox(toolbox);
@@ -132,10 +132,10 @@ function updateTexts() {
     document.getElementById("bottomText").innerText = T2C.MSG.currentLanguage.HEADING_BOTTOM_TEXT;
   };
   document.getElementById("language").addEventListener("change", function() {
-  runUpdates();
+  runTextLangUpdates();
   });
   window.addEventListener('load', (event) => {
-    runUpdates()
+    runTextLangUpdates()
   });
   document.getElementById("convertToJSText2CodeButton").addEventListener("click", function() {
     if(document.getElementById("consoleDisplay")) document.getElementById("consoleDisplay").textContent = "";
