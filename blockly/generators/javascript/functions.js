@@ -41,10 +41,9 @@ Blockly.JavaScript['functionCode'] = function(block) {
   
 };
 
-<<<<<<< Updated upstream
+
 Blockly.JavaScript['function'] = functionCode.bind(null, 'function');
 
-=======
 Blockly.JavaScript['function_with_return'] = function(block) {
   // Define a procedure with a return value.
   var funcName = Blockly.JavaScript.variableDB_.getName(
@@ -135,4 +134,3 @@ Blockly.JavaScript['procedures_ifreturn'] = function(block) {
   code += '}\n';
   return code;
 };
->>>>>>> Stashed changes
