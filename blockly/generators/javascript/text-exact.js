@@ -229,15 +229,13 @@ if(document.getElementById("consoleDisplay")) {
     return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
   };
  
-  var lengthCode = function(funcName, block) {
+  Blockly.JavaScript['t2c_text_length'] = function(block) {
     // length of string.
     var text = Blockly.JavaScript.valueToCode(block, 'STRING',
         Blockly.JavaScript.ORDER_MEMBER) || '\'\'';
-    var code = text + funcName;
+    var code = T2C.MSG.EN["TEXT_T2C_GET_STRING_LENGTH"].replace("%1", text);
     return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];   
   };
-
-  Blockly.JavaScript['t2c_text_length'] = lengthCode.bind(null, '.length');
 
   var getBeforeAfterCode = function(funcName, block) {
     // Get text appearing before or after.
