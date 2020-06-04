@@ -148,7 +148,7 @@ if(document.getElementById("consoleDisplay")) {
     // length of string.
     var text = Blockly.JavaScript.valueToCode(block, 'STRING',
         Blockly.JavaScript.ORDER_MEMBER) || '\'\'';
-    var code = text + funcName;
+    var code = text + ".length()";
     return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];   
   };
 

@@ -342,18 +342,18 @@ Blockly.Blocks['js_text_getsubstring'] = {
 Blockly.Blocks['t2c_text_length'] = {
   init: function() {
     this.jsonInit({
+      "message0": T2C.MSG.currentLanguage.TEXT_T2C_GET_STRING_LENGTH,
       "args0": [
         {
           "type": "input_value",
           "name": "STRING",
           "check": "String"
         }],
-      "message0": T2C.MSG.currentLanguage.TEXT_T2C_GET_STRING_LENGTH,
       "inputsInline": true,
       "output": "Number",
       "colour": Blockly.Blocks.texts.HUE,
-      "tooltip": '',
-      "helpUrl": ''
+      "tooltip": T2C.MSG.currentLanguage.TEXT_T2C_LENGTH_TOOLTIP,
+      "helpUrl": 'https://www.w3schools.com/js/js_string_methods.asp'
     });
   }
 };
