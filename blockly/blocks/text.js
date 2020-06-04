@@ -348,7 +348,7 @@ Blockly.Blocks['t2c_text_length'] = {
           "name": "STRING",
           "check": "String"
         }],
-      "message0": "%1" + T2C.MSG.currentLanguage.TEXT_T2C_GET_STRING_LENGTH,
+      "message0": T2C.MSG.currentLanguage.TEXT_T2C_GET_STRING_LENGTH,
       "inputsInline": true,
       "output": "Number",
       "colour": Blockly.Blocks.texts.HUE,
