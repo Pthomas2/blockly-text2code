@@ -148,7 +148,7 @@ if(document.getElementById("consoleDisplay")) {
     // length of string.
     var text = Blockly.JavaScript.valueToCode(block, 'STRING',
         Blockly.JavaScript.ORDER_MEMBER) || '\'\'';
-    var code = T2C.MSG.currentLanguage["TEXT_T2C_GET_STRING_LENGTH"].replace("%1", text);
+    var code = text.length;
     return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];   
   };
   
