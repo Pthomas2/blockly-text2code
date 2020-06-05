@@ -228,13 +228,13 @@ if(document.getElementById("consoleDisplay")) {
 
     return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
   };
- 
+  String.prototype.लंबाई = String.prototype.length;
   Blockly.JavaScript['t2c_text_length'] = function(block) {
     // length of string.
     var text = Blockly.JavaScript.valueToCode(block, 'STRING',
         Blockly.JavaScript.ORDER_MEMBER) || '\'\'';
-    var code = text.length;
-    return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];   
+    var code = T2C.MSG.currentLanguage["TEXT_T2C_GET_STRING_LENGTH"].replace("%1", text);
+    return [code, Blockly.JavaScript.ORDER_MEMBER];   
   };
 
   var getBeforeAfterCode = function(funcName, block) {
