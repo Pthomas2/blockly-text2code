@@ -228,8 +228,14 @@ if(document.getElementById("consoleDisplay")) {
 
     return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
   };
+<<<<<<< Updated upstream
  
   var lengthCode = function(funcName, block) {
+=======
+  
+  String.prototype.लंबाई = String.prototype.length;
+  Blockly.JavaScript['t2c_text_length'] = function(block) {
+>>>>>>> Stashed changes
     // length of string.
     var text = Blockly.JavaScript.valueToCode(block, 'STRING',
         Blockly.JavaScript.ORDER_MEMBER) || '\'\'';
